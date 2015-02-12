@@ -47,7 +47,7 @@
 				<div class="wiz-content movielist">					
 			    	<#list movies as movie>
 			    		<div class="movie">
-			    			<p><input type="checkbox" name="movieNames" value="${movie.title}"/> ${movie.title}</p>
+			    			<p><input type="checkbox" name="movieNames" value="${movie.title}"/> ${movie.title} <#if movie.isNewlyReleased()><span class="newMovie">** NEW **</span></#if></p>
 			    		</div>
 			    	</#list>
 				</div>

@@ -24,3 +24,7 @@ body {
 	height: 100%;
 	color: #ffffff;
 }
+
+.newMovie {
+	color: red;
+}

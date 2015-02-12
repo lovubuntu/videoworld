@@ -57,7 +57,7 @@ public class RentalControllerTest {
     @Test
     public void rent_shouldAddMovieToRentalRepository(){
         final String[] movies = new String[]{"movie1"};
-        final Movie movie1 = new Movie("movie1");
+        final Movie movie1 = new Movie("movie1", true);
         final Set<Movie> moviesSet = Sets.newSet(movie1);
         final LocalDateTime dateTime = new LocalDateTime();
         final Set<Rental> expectedRentals = com.google.common.collect.Sets.newHashSet(new Rental(customer,movie1,Period.days(1),dateTime));
@@ -75,7 +75,7 @@ public class RentalControllerTest {
     public void rent_shouldAddRentalToTransactionsRepository(){
         final LocalDateTime dateTime = new LocalDateTime();
         final String[] movies = new String[]{"movie1"};
-        final Movie movie1 = new Movie("movie1");
+        final Movie movie1 = new Movie("movie1", false);
         final Set<Movie> moviesSet = Sets.newSet(movie1);
         final Set<Rental> expectedRentals = com.google.common.collect.Sets.newHashSet(new Rental(customer,movie1,Period.days(1),dateTime));
         final Transaction expectedTransaction = new Transaction(dateTime,customer,expectedRentals);
@@ -92,7 +92,7 @@ public class RentalControllerTest {
     public void rent_ShouldRenderViewWithRentalStatementOnSuccess(){
         final LocalDateTime dateTime = new LocalDateTime();
         final String[] movies = new String[]{"movie1"};
-        final Movie movie1 = new Movie("movie1");
+        final Movie movie1 = new Movie("movie1", false);
         final Set<Movie> moviesSet = Sets.newSet(movie1);
         final Set<Rental> expectedRentals = com.google.common.collect.Sets.newHashSet(new Rental(customer, movie1, Period.days(1), dateTime));
         final String expectedRentalStatement = "someRentalStatement";

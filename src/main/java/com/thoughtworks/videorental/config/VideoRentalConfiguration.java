@@ -20,10 +20,11 @@ public class VideoRentalConfiguration {
     @Bean
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public MovieRepository movieRepository() {
-        final Movie avatar = new Movie("Avatar");
-        final Movie upInTheAir = new Movie("Up In The Air");
-        final Movie findingNemo = new Movie("Finding Nemo");
-        return new SetBasedMovieRepository(Arrays.asList(avatar, upInTheAir, findingNemo));
+        final Movie avatar = new Movie("Avatar", false);
+        final Movie upInTheAir = new Movie("Up In The Air", false);
+        final Movie findingNemo = new Movie("Finding Nemo", false);
+        final Movie americanSniper = new Movie("American Sniper", true);
+        return new SetBasedMovieRepository(Arrays.asList(avatar, upInTheAir, findingNemo, americanSniper));
     }
     @Bean
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)

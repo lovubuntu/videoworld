@@ -23,11 +23,11 @@ public class CustomerTest {
     public void setUp() {
         customer = new Customer("John Smith");
 
-        final Movie montyPython = new Movie("Monty Python and the Holy Grail");
-        final Movie ran = new Movie("Ran");
-        final Movie laConfidential = new Movie("LA Confidential");
-        final Movie starTrek = new Movie("Star Trek 13.2");
-        final Movie WallaceAndGromit = new Movie("Wallace and Gromit");
+        final Movie montyPython = new Movie("Monty Python and the Holy Grail", false);
+        final Movie ran = new Movie("Ran", false);
+        final Movie laConfidential = new Movie("LA Confidential", false);
+        final Movie starTrek = new Movie("Star Trek 13.2", false);
+        final Movie WallaceAndGromit = new Movie("Wallace and Gromit", false);
 
         mixedRentals = new LinkedHashSet<Rental>();
         LocalDateTime rentedOn = new LocalDateTime();
